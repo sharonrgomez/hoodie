@@ -1,0 +1,35 @@
+header {
+  background-color: $lightest-gray;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 $m-size;
+  max-width: 145rem;
+}
+
+.nav {
+  padding: $s-size;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items a {
+  text-align: center;
+  text-decoration: none;
+  padding: $s-size $m-size;
+  font-size: $font-size-md;
+  color: $darkest-gray;
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+.nav-title {
+  color: $darkest-gray;
+  margin: 0;
+  font-weight: 500;
+}
