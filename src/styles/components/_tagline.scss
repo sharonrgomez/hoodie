@@ -1,11 +1,32 @@
 .box {
+    margin-top: $l-size;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: unset;
     align-items: center;
     height: 50rem;
+    @media (min-width: $tab-breakpoint) {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+}
+
+.tagline {
+    width: 35rem;
+    @media (min-width: $desktop-breakpoint) {
+        width: 46rem;
+    }
 }
 
 .tagline-text {
     color: $darkest-gray;
-    width: 40rem;
+    font-size: $font-size-xl;
+    margin-bottom: 1rem;
+    @media (min-width: $tab-sm-breakpoint) {
+        font-size: 4.5rem;
+    }
+}
+
+.tagline-text_subtitle {
+    font-size: $font-size-md;
 }

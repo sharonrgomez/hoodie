@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -8,7 +10,7 @@ html {
 
 body {
     color: $dark-gray;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: $m-size;
     line-height: 1.6;
     margin: 0;
@@ -20,8 +22,4 @@ button {
 
 button:disabled {
     cursor: default;
-}
-
-.is-active {
-    font-weight: 900;
 }

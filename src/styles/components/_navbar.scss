@@ -15,21 +15,32 @@ header {
 .nav-items {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem 0 0;
+  @media (min-width: $mobile-breakpoint) {
+    padding: $m-size;
+  }
 }
 
 .nav-items a {
   text-align: center;
   text-decoration: none;
-  padding: $s-size $m-size;
   font-size: $font-size-md;
-  color: $darkest-gray;
+  color: $dark-gray;
+  margin-left: 2.5rem;
   &:hover {
     color: $light-gray;
   }
 }
 
 .nav-title {
-  color: $darkest-gray;
-  margin: 0;
-  font-weight: 500;
+  color: $gray-blue;
+  font-weight: 600;
+  font-size: 3rem;
+  padding: 0;
+  text-shadow: 1.5px 1.5px 2px $darkest-gray;
+  @media (min-width: $mobile-breakpoint) {
+    font-size: $font-size-xl;
+    margin: 0 0 0 $m-size;
+  }
 }

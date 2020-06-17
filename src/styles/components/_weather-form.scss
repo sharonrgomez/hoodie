@@ -1,7 +1,29 @@
-.weather-form {
-    width: 40rem;
+.weather-form input {
+    width: 100%;
+    padding: 1rem;
+    font-size: $font-size-lg;
+    border-radius: 3rem;
+    border: 1px solid $light-gray;
+}
+
+.weather-form_container {
+    width: 33rem;
+    padding: 2rem;
 }
 
 .weather-form_title {
     font-weight: 400;
+}
+
+.weather-form_button {
+    margin: 1rem 0 1rem 0;
+    display: block;
+    width: 100%;
+    font-size: $font-size-lg;
+    background: #526c85;
+    border: none;
+    padding: $xs-size;
+    color: white;
+    text-shadow: 1px 0.6px 3px $almost-black;
+    border-radius: 3rem;
 }
