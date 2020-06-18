@@ -59,7 +59,7 @@ class Content extends React.Component {
                     <div className='weather-form_container'>
                         <h2 className='weather-form_title'>Let's check the weather...</h2>
                         <form className='weather-form' onSubmit={this.handleSubmit}>
-                            <input value={this.state.zip} onChange={this.handleChange} placeholder='Enter your zip code' />
+                            <input value={this.state.zip} onChange={this.handleChange} placeholder='Your zip code' />
                             <button className='weather-form_button' type='submit'>Submit</button>
                         </form>
                         {(city && desc && temp) &&

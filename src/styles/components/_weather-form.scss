@@ -1,18 +1,24 @@
 .weather-form input {
     width: 100%;
+    text-align: center;
     padding: 1rem;
     font-size: $font-size-lg;
     border-radius: 3rem;
     border: 1px solid $light-gray;
+    color: $almost-black;
+    &:focus {
+        outline: none;
+        border: 1.4px solid $navy;
+    }
 }
 
 .weather-form_container {
-    width: 33rem;
-    padding: 2rem;
+    width: 27rem;
 }
 
 .weather-form_title {
     font-weight: 400;
+    width: 29rem;
 }
 
 .weather-form_button {
@@ -20,7 +26,7 @@
     display: block;
     width: 100%;
     font-size: $font-size-lg;
-    background: #526c85;
+    background: $navy;
     border: none;
     padding: $xs-size;
     color: white;

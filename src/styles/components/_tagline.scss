@@ -1,5 +1,5 @@
 .box {
-    margin-top: $l-size;
+    margin-top: $s-size;
     display: flex;
     flex-direction: column;
     justify-content: unset;
@@ -8,12 +8,13 @@
     @media (min-width: $tab-breakpoint) {
         justify-content: space-evenly;
         flex-direction: row;
+        margin-top: $l-size;
     }
 }
 
 .tagline {
-    width: 35rem;
-    @media (min-width: $desktop-breakpoint) {
+    width: 27rem;
+    @media (min-width: $tab-sm-breakpoint) {
         width: 46rem;
     }
 }
@@ -29,4 +30,5 @@
 
 .tagline-text_subtitle {
     font-size: $font-size-md;
+    margin-bottom: 1rem;
 }

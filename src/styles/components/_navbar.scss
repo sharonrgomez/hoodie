@@ -1,5 +1,5 @@
 header {
-  background-color: $lightest-gray;
+  background-color: #f2f2f2;
 }
 
 .container {
@@ -14,11 +14,14 @@ header {
 
 .nav-items {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 0 3rem 0 0;
+  padding: 0;
   @media (min-width: $mobile-breakpoint) {
-    padding: $m-size;
+    padding: 0 3rem 0 0;
+    align-items: center;
+    flex-direction: row;
   }
 }
 
@@ -26,7 +29,7 @@ header {
   text-align: center;
   text-decoration: none;
   font-size: $font-size-md;
-  color: $dark-gray;
+  color: $gray;
   margin-left: 2.5rem;
   &:hover {
     color: $light-gray;
@@ -38,9 +41,10 @@ header {
   font-weight: 600;
   font-size: 3rem;
   padding: 0;
+  margin: 0;
   text-shadow: 1.5px 1.5px 2px $darkest-gray;
-  @media (min-width: $mobile-breakpoint) {
-    font-size: $font-size-xl;
+  @media (min-width: $tab-sm-breakpoint) {
+    font-size: 3.5rem;
     margin: 0 0 0 $m-size;
   }
 }
