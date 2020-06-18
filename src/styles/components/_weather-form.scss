@@ -3,7 +3,7 @@
     text-align: center;
     padding: 1rem;
     font-size: $font-size-lg;
-    border-radius: 3rem;
+    border-radius: 1rem;
     border: 1px solid $light-gray;
     color: $almost-black;
     &:focus {
@@ -22,5 +22,8 @@
 
 .weather-form_title {
     font-weight: 400;
-    width: 29rem;
+    font-size: $font-size-lg;
+    @media (min-width: $mobile-breakpoint) {
+        font-size: 2.4rem;
+    }
 }

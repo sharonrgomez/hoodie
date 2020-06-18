@@ -5,10 +5,10 @@
     font-size: $font-size-lg;
     background: $navy;
     border: none;
-    padding: $xs-size $m-size;
+    padding: $xs-size $l-size;
     color: white;
     text-shadow: 1px 0.6px 3px $almost-black;
-    border-radius: 3rem;
+    border-radius: 1rem;
     &:hover {
         background: darken($navy, 5%);
     }
