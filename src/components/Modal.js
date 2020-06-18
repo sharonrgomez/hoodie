@@ -3,7 +3,8 @@ import React from 'react';
 const Modal = ({ handleClose, children, show }) => {
     return (
         <>
-            {show &&
+            {
+                show &&
                 <div className='modal'>
                     <div className='modal-main'>
                         {children}

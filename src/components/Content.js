@@ -9,6 +9,7 @@ export default class Content extends React.Component {
             city: '',
             state: '',
             temp: '',
+            error: null,
             showModal: false
         };
 
@@ -28,15 +29,25 @@ export default class Content extends React.Component {
         e.preventDefault();
         fetch(this.getWeather(this.state.zip))
             .then(res => res.json())
-            .then(({ response }) => {
-                this.setState({
-                    city: response.place.name,
-                    state: response.place.state,
-                    temp: response.ob.tempF,
-                    desc: response.ob.weather
-                });
-            });
-        this.setState({ showModal: true });
+            .then(
+                ({ response, error }) => {
+                    if (error) {
+                        this.setState({
+                            showModal: true,
+                            error: error.description
+                        });
+                    } else {
+                        this.setState({
+                            error: null,
+                            showModal: true,
+                            city: response.place.name,
+                            state: response.place.state,
+                            temp: response.ob.tempF,
+                            desc: response.ob.weather,
+                        })
+                    }
+                }
+            );
     }
 
     getWeather = (userZip) => {
@@ -47,26 +58,34 @@ export default class Content extends React.Component {
     hoodieMessage = (temp) => {
         let forecast = '';
         (parseInt(temp, 10) < 45)
-        ? (forecast = 'It\'s too cold to just wear a hoodie. Maybe you should put on a coat...')
-        :  (parseInt(temp, 10) > 68)
-        ? (forecast = 'Unfortunately, it\'s too hot to wear a hoodie today.')
-        : (forecast = 'Go grab your favorite hoodie, because today is the perfect day to wear one!')
+            ? (forecast = 'It\'s too cold to just wear a hoodie. Maybe you should put on a coat...')
+            : (parseInt(temp, 10) > 68)
+            ? (forecast = 'Unfortunately, it\'s too hot to wear a hoodie today.')
+            : (forecast = 'Go grab your favorite hoodie, because today is the perfect day to wear one!')
         return forecast;
     }
 
     render() {
-        const { city, state, temp, desc } = this.state;
+        const { city, state, temp, desc, error, showModal } = this.state;
         return (
             <>
                 <Modal show={this.state.showModal} handleClose={this.hideModal}>
-                    {(city && desc && temp) &&
-                        <>
-                            <h1 className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</h1>
-                            <p className='modal_forecast'>
-                                It's {desc.toLowerCase()} with a temperature of {temp}&deg;F 
-                                in <span className='city'>{city}</span>, {state.toUpperCase()}.                                
-                            </p>
-                        </>
+                    {
+                        showModal && (
+                            error
+                                ? (
+                                    <p className='modal_hoodie-msg'>{error}</p>
+                                )
+                                : (
+                                    <>
+                                        <h1 className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</h1>
+                                        <p className='modal_forecast'>
+                                            It's {desc.toLowerCase()} with a temperature of {temp}&deg;F
+                                        in <span className='city'>{city}</span>, {state.toUpperCase()}.
+                                    </p>
+                                    </>
+                                )
+                        )
                     }
                 </Modal>
                 <div className='box'>
