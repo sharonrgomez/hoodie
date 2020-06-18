@@ -4,31 +4,38 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
+}
 
-    .modal-main {
-        position: fixed;
-        background: white;
-        width: 90%;
-        height: auto;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: $s-size $m-size;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-            text-align: center;
-            font-size: 2.5rem;
-        }
-        @media (min-width: $tab-sm-breakpoint) {
-            width: 50%;
-        }
-        @media (min-width: $desktop-breakpoint) {
-            width: 40%;
-        }
+.modal-main {
+    position: fixed;
+    background: white;
+    width: 90%;
+    height: auto;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: $s-size $m-size;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: $tab-sm-breakpoint) {
+        width: 50%;
     }
+    @media (min-width: $desktop-breakpoint) {
+        width: 40%;
+    }
+}
+
+.modal_hoodie-msg {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.modal_forecast {
+    padding: 0 2rem;
+    text-align: center;
+    font-size: $font-size-md;
+    margin-top: 0;
 }

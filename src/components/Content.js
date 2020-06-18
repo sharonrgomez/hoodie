@@ -44,23 +44,28 @@ export default class Content extends React.Component {
         return url.replace('zip', userZip);
     }
 
-    // if(temp < 40) {
-    //     // too cold
-    // } else if(temp > 68) {
-    //     // too hot
-    // } else {
-    //     // perfect
-    // }
+    hoodieMessage = (temp) => {
+        let forecast = '';
+        (parseInt(temp, 10) < 45)
+        ? (forecast = 'It\'s too cold to just wear a hoodie. Maybe you should put on a coat...')
+        :  (parseInt(temp, 10) > 68)
+        ? (forecast = 'Unfortunately, it\'s too hot to wear a hoodie today.')
+        : (forecast = 'Go grab your favorite hoodie, because today is the perfect day to wear one!')
+        return forecast;
+    }
 
     render() {
         const { city, state, temp, desc } = this.state;
-
         return (
             <>
                 <Modal show={this.state.showModal} handleClose={this.hideModal}>
                     {(city && desc && temp) &&
                         <>
-                            <h1>It is currently {desc.toLowerCase()} in <span className='city'>{city}</span>, {state.toUpperCase()} with a temperature of {temp}&deg;F.</h1>
+                            <h1 className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</h1>
+                            <p className='modal_forecast'>
+                                It's {desc.toLowerCase()} with a temperature of {temp}&deg;F 
+                                in <span className='city'>{city}</span>, {state.toUpperCase()}.                                
+                            </p>
                         </>
                     }
                 </Modal>
