@@ -5,17 +5,17 @@
     justify-content: unset;
     align-items: center;
     height: 50rem;
-    @media (min-width: $tab-breakpoint) {
+    @media (min-width: $desktop-breakpoint) {
         justify-content: space-evenly;
         flex-direction: row;
-        margin-top: 10vh;
+        margin: 10vh 3rem 3rem;
     }
 }
 
 .tagline {
-    width: 27rem;
+    width: 80%;
     @media (min-width: $tab-sm-breakpoint) {
-        width: 46rem;
+        width: 55rem;
     }
 }
 
@@ -24,7 +24,10 @@
     font-size: $font-size-xl;
     margin-bottom: 1rem;
     @media (min-width: $tab-sm-breakpoint) {
-        font-size: 4.5rem;
+        font-size: 4rem;
+    }
+    @media (min-width: $desktop-breakpoint) {
+        font-size: 5rem;
     }
 }
 

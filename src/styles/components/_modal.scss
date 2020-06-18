@@ -27,7 +27,7 @@
         @media (min-width: $tab-sm-breakpoint) {
             width: 50%;
         }
-        @media (min-width: $tab-breakpoint) {
+        @media (min-width: $desktop-breakpoint) {
             width: 40%;
         }
     }

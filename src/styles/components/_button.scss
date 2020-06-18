@@ -5,15 +5,21 @@
     font-size: $font-size-lg;
     background: $navy;
     border: none;
-    padding: $xs-size;
+    padding: $xs-size $m-size;
     color: white;
     text-shadow: 1px 0.6px 3px $almost-black;
     border-radius: 3rem;
+    &:hover {
+        background: darken($navy, 5%);
+    }
+    &:focus {
+        outline: none;
+        background: darken($navy, 10%);
+    }
 }
 
 .button_modal {
     @extend .button;
     width: auto;
-    padding: $s-size $m-size;
-    margin: 0
+    margin: 0;
 }

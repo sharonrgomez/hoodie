@@ -13,8 +13,11 @@
 }
 
 .weather-form_container {
-    width: 27rem;
-    margin-bottom: 5rem;
+    width: 80%;
+    margin: 0 $m-size 5rem 2rem;
+    @media (min-width: $tab-sm-breakpoint) {
+        width: 30rem;
+    }
 }
 
 .weather-form_title {

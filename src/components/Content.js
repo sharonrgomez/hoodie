@@ -66,7 +66,7 @@ export default class Content extends React.Component {
                 </Modal>
                 <div className='box'>
                     <div className='tagline'>
-                        <h1 className='tagline-text'>Find out if today's weather is suitable for wearing a hoodie.</h1>
+                        <h1 className='tagline-text'>Find out if the weather is suitable for wearing a hoodie today.</h1>
                         <p className='tagline-text_subtitle'>Just plug in your zip code and we'll help you figure out if today is a hoodie day.</p>
                     </div>
                     <div className='weather-form_container'>
