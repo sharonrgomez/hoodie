@@ -1,17 +1,23 @@
 import React from 'react';
+import Modal from './Modal';
 
-class Content extends React.Component {
+export default class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             zip: '',
             city: '',
             state: '',
-            temp: ''
+            temp: '',
+            showModal: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    hideModal = () => {
+        this.setState({ showModal: false });
     }
 
     handleChange(e) {
@@ -30,12 +36,12 @@ class Content extends React.Component {
                     desc: response.ob.weather
                 });
             });
+        this.setState({ showModal: true });
     }
 
     getWeather = (userZip) => {
         const url = 'https://api.aerisapi.com/observations/zip?client_id=bztqTzogbfkse9jYTOTi7&client_secret=25AvdRwi0aGuFcasRG1wNXIXCZCsiXuut9PqKge9';
-        const newUrl = url.replace('zip', userZip);
-        return newUrl;
+        return url.replace('zip', userZip);
     }
 
     // if(temp < 40) {
@@ -51,6 +57,13 @@ class Content extends React.Component {
 
         return (
             <>
+                <Modal show={this.state.showModal} handleClose={this.hideModal}>
+                    {(city && desc && temp) &&
+                        <>
+                            <h1>It is currently {desc.toLowerCase()} in <span className='city'>{city}</span>, {state.toUpperCase()} with a temperature of {temp}&deg;F.</h1>
+                        </>
+                    }
+                </Modal>
                 <div className='box'>
                     <div className='tagline'>
                         <h1 className='tagline-text'>Find out if today's weather is suitable for wearing a hoodie.</h1>
@@ -60,18 +73,11 @@ class Content extends React.Component {
                         <h2 className='weather-form_title'>Let's check the weather...</h2>
                         <form className='weather-form' onSubmit={this.handleSubmit}>
                             <input value={this.state.zip} onChange={this.handleChange} placeholder='Your zip code' />
-                            <button className='weather-form_button' type='submit'>Submit</button>
+                            <button className='button' type='submit'>Submit</button>
                         </form>
-                        {(city && desc && temp) &&
-                            <>
-                                <p className='message'>It is currently {desc.toLowerCase()} in <span className='city'>{city}</span>, {state.toUpperCase()} with a temperature of {temp}&deg;F.</p>
-                            </>
-                        }
                     </div>
                 </div>
             </>
         );
     };
 };
-
-export default Content;

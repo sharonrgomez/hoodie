@@ -1,0 +1,19 @@
+.button {
+    margin: 1rem 0 1rem 0;
+    display: block;
+    width: 100%;
+    font-size: $font-size-lg;
+    background: $navy;
+    border: none;
+    padding: $xs-size;
+    color: white;
+    text-shadow: 1px 0.6px 3px $almost-black;
+    border-radius: 3rem;
+}
+
+.button_modal {
+    @extend .button;
+    width: auto;
+    padding: $s-size $m-size;
+    margin: 0
+}

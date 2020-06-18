@@ -14,22 +14,10 @@
 
 .weather-form_container {
     width: 27rem;
+    margin-bottom: 5rem;
 }
 
 .weather-form_title {
     font-weight: 400;
     width: 29rem;
-}
-
-.weather-form_button {
-    margin: 1rem 0 1rem 0;
-    display: block;
-    width: 100%;
-    font-size: $font-size-lg;
-    background: $navy;
-    border: none;
-    padding: $xs-size;
-    color: white;
-    text-shadow: 1px 0.6px 3px $almost-black;
-    border-radius: 3rem;
 }
