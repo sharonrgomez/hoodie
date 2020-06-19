@@ -78,11 +78,11 @@ export default class Content extends React.Component {
                                 )
                                 : (
                                     <>
-                                        <h1 className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</h1>
+                                        <p className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</p>
                                         <p className='modal_forecast'>
-                                            It's {desc.toLowerCase()} with a temperature of {temp}&deg;F
-                                        in <span className='city'>{city}</span>, {state.toUpperCase()}.
-                                    </p>
+                                            It's currently {desc.toLowerCase()} with a temperature of {temp}&deg;F
+                                            in <span className='city'>{city}</span>, {state.toUpperCase()}.
+                                        </p>
                                     </>
                                 )
                         )
@@ -91,7 +91,7 @@ export default class Content extends React.Component {
                 <div className='box'>
                     <div className='tagline'>
                         <h1 className='tagline-text'>Find out if the weather is suitable for wearing a hoodie today.</h1>
-                        <p className='tagline-text_subtitle'>Just plug in your zip code and we'll help you figure out if today is a hoodie day.</p>
+                        <p className='tagline-text_subtitle'>Just plug in your zip code and we'll tell you if today is a hoodie day.</p>
                     </div>
                     <div className='weather-form_container'>
                         <h2 className='weather-form_title'>Let's check the weather...</h2>

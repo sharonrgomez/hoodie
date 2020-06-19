@@ -1,0 +1,14 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    height: 95vh; 
+    margin: $xs-size 0 0 0;
+    @media (min-width: $desktop-breakpoint) {
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin: 0 3rem 3rem;
+        height: 65vh;
+    }
+}

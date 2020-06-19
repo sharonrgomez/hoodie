@@ -1,25 +1,26 @@
 .button {
-    margin: 1rem 0 1rem 0;
+    margin: $s-size 0;
     display: block;
     width: 100%;
     font-size: $font-size-lg;
-    background: $navy;
+    background: $teal;
     border: none;
     padding: $xs-size $l-size;
     color: white;
-    text-shadow: 1px 0.6px 3px $almost-black;
-    border-radius: 1rem;
+    text-shadow: 1px 1px 2px $almost-black;
+    border-radius: $xs-size;
+    box-shadow: 0.5px 0.5px 1.5px $gray;
     &:hover {
-        background: darken($navy, 5%);
+        background: darken($teal, 10%);
     }
     &:focus {
         outline: none;
-        background: darken($navy, 10%);
+        background: darken($teal, 15%);
     }
 }
 
 .button_modal {
     @extend .button;
     width: auto;
-    margin: 0 0 1.6rem 0;
+    margin: 0 0 $m-size 0;
 }

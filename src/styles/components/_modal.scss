@@ -15,11 +15,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: $s-size $m-size;
-    border-radius: 1rem;
+    border-radius: $s-size;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 1.5px 1.5px 2px $darkest-gray;
     @media (min-width: $tab-sm-breakpoint) {
         width: 50%;
     }
@@ -31,6 +32,9 @@
 .modal_hoodie-msg {
     text-align: center;
     font-size: 2.5rem;
+    margin-bottom: $m-size;
+    color: $almost-black;
+    font-weight: 500;
 }
 
 .modal_forecast {
@@ -38,4 +42,13 @@
     text-align: center;
     font-size: $font-size-md;
     margin-top: 0;
+    color: $darkest-gray;
+}
+
+.message {
+    width: 30rem;
+}
+
+.city {
+    text-transform: capitalize;
 }
