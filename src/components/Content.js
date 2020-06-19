@@ -96,7 +96,7 @@ export default class Content extends React.Component {
                     <div className='weather-form_container'>
                         <h2 className='weather-form_title'>Let's check the weather...</h2>
                         <form className='weather-form' onSubmit={this.handleSubmit}>
-                            <input value={this.state.zip} onChange={this.handleChange} placeholder='Your zip code' />
+                            <input type='number' value={this.state.zip} onChange={this.handleChange} placeholder='Your zip code' />
                             <button className='button' type='submit'>Submit</button>
                         </form>
                     </div>
