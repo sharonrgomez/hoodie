@@ -29,23 +29,21 @@ export default class Content extends React.Component {
         fetch(this.getWeather(this.state.zip))
             .then(res => res.json())
             .then(
-                ({ response, error }) => {
-                    if (error) {
-                        this.setState({
-                            showModal: true,
-                            error: error.description
-                        });
-                    } else {
-                        this.setState({
-                            error: null,
-                            showModal: true,
-                            name: response.name,
-                            temp: response.temp,
-                            desc: response.desc,
-                        })
-                    }
+                (response) => {
+                    this.setState({
+                        error: null,
+                        showModal: true,
+                        name: response.name,
+                        temp: response.temp,
+                        desc: response.desc,
+                    })
                 }
-            );
+            ).catch(() => {
+                this.setState({
+                    showModal: true,
+                    error: 'Somehing went wrong!'
+                });
+            });
     }
 
     getWeather = (userZip) => {
@@ -78,7 +76,7 @@ export default class Content extends React.Component {
                                     <>
                                         <p className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</p>
                                         <p className='modal_forecast'>
-                                            It's currently {desc.toLowerCase()} with a temperature of {temp}&deg;F
+                                            It's currently {Math.round(temp)}&deg;F with {desc.toLowerCase()}{' '}
                                             in <span className='city'>{name}</span>.
                                         </p>
                                     </>
