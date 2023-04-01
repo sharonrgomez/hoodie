@@ -6,8 +6,7 @@ export default class Content extends React.Component {
         super(props);
         this.state = {
             zip: '',
-            city: '',
-            state: '',
+            name: '',
             temp: '',
             error: null,
             showModal: false
@@ -40,10 +39,9 @@ export default class Content extends React.Component {
                         this.setState({
                             error: null,
                             showModal: true,
-                            city: response.place.name,
-                            state: response.place.state,
-                            temp: response.ob.tempF,
-                            desc: response.ob.weather,
+                            name: response.name,
+                            temp: response.temp,
+                            desc: response.desc,
                         })
                     }
                 }
@@ -51,8 +49,8 @@ export default class Content extends React.Component {
     }
 
     getWeather = (userZip) => {
-        const url = 'https://api.aerisapi.com/observations/zip?client_id=bztqTzogbfkse9jYTOTi7&client_secret=25AvdRwi0aGuFcasRG1wNXIXCZCsiXuut9PqKge9';
-        return url.replace('zip', userZip);
+        const url = 'https://sharongomez.com/api/weather?zipCode=user';
+        return url.replace('user', userZip);
     }
 
     hoodieMessage = (temp) => {
@@ -66,7 +64,7 @@ export default class Content extends React.Component {
     }
 
     render() {
-        const { city, state, temp, desc, error, showModal } = this.state;
+        const { name, temp, desc, error, showModal } = this.state;
         return (
             <>
                 <Modal show={this.state.showModal} handleClose={this.hideModal}>
@@ -81,7 +79,7 @@ export default class Content extends React.Component {
                                         <p className='modal_hoodie-msg'>{this.hoodieMessage(temp)}</p>
                                         <p className='modal_forecast'>
                                             It's currently {desc.toLowerCase()} with a temperature of {temp}&deg;F
-                                            in <span className='city'>{city}</span>, {state.toUpperCase()}.
+                                            in <span className='city'>{name}</span>.
                                         </p>
                                     </>
                                 )
